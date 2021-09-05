@@ -1,11 +1,19 @@
-var opcion=0;
+ //JS
+ let combos = document.getElementByClassName("combo");
+    
+ for(let i=0;i<combos.length;i++){
+     console.log(combos[i].innerHTML);
+ }
+
+
+/*var opcion=0;
 var cantidad=0; 
 var valorTotal=0; 
 var indicador='ND'; 
 var contadorA=0; 
 var contadorN=0; 
 /*Arrays para Registro de Compra Diaria de Entradas Adulto y Niño*/
-const arrayComprasA=[]; 
+/*const arrayComprasA=[]; 
 const arrayComprasN=[]; 
 
 /*Antiguos Objetos
@@ -25,14 +33,14 @@ const entradaNino = {
                     };*/
 
 /*Objeto Entrada*/
-function Entrada(indicadorArg,stockArg,precioDomArg,precioSabArg,nombreArg){
+/*function Entrada(indicadorArg,stockArg,precioDomArg,precioSabArg,nombreArg){
     this.indicador=indicadorArg;
     this.stock=stockArg;
     this.precioDom=precioDomArg;
     this.precioSab=precioSabArg;
     this.nombre=nombreArg;
     /*Metodos del Objeto */
-    this.cantidad=function(){
+ /*   this.cantidad=function(){
         alert('Stock '+this.nombre+': '+ this.stock);
     };
     this.venta=function(cantidad){
@@ -56,18 +64,18 @@ function CompraEntrada(consecutivoArg,clienteIDArg,entradaIDArg,cantidadArg,valo
     };
 }*/
 
-const entradaAdulto = new Entrada('AD',20,20000,15000,'Entrada Adulto');
+/*const entradaAdulto = new Entrada('AD',20,20000,15000,'Entrada Adulto');
 const entradaNino = new Entrada('NI',20,15000,13000,'Entrada Niño');
 
 /*Funcion para presentar el menu de opciones*/
-function menu(opcion){
+/*function menu(opcion){
     while(opcion!=6)
     {
         opcion=prompt('Ingrese su opción: \n 1. Comprar Entradas Adulto \n 2. Comprar Entradas Niño \n 3. Ver Registro de Compras Adultos \n 4. Ver Registro de Compras Niños \n 5. Ver Entradas Disponibles \n 6. Salir');
 
         switch(opcion){
             case '1':/*Compra de Entradas Adultos */
-                cantidad=prompt('Cantidad de Entradas Adulto:');
+ /*               cantidad=prompt('Cantidad de Entradas Adulto:');
                 if(entradaAdulto.stock>0 && cantidad<=entradaAdulto.stock){
                     entradaAdulto.venta(cantidad);
                     valorTotal=entradaAdulto.precioDom*cantidad;
@@ -82,8 +90,8 @@ function menu(opcion){
                 }
                 break;
             case '2':/*Compra de Entradas Niños */
-                cantidad=prompt('Cantidad de Entradas Niño:');
-                if(entradaNino.stock>0 && cantidad<=entradaNino.stock){
+  /*              cantidad=prompt('Cantidad de Entradas Niño:');
+ /*               if(entradaNino.stock>0 && cantidad<=entradaNino.stock){
                     entradaNino.venta(cantidad);
                     valorTotal=entradaNino.precioDom*cantidad;
                     contadorN++;
@@ -97,10 +105,10 @@ function menu(opcion){
                 }
                 break;
             case '3':/*Consulta Registro de Compras Adultos */
-                verRegistroCompras('AD');
+ /*               verRegistroCompras('AD');
                 break;
             case '4':/*Consulta Registro de Compras Niños*/
-                verRegistroCompras('NI');
+ /*               verRegistroCompras('NI');
                 break;
             case '5':
                 alert('Stock Entradas Adultos: '+entradaAdulto.stock+'\nStock Entradas Niños: '+entradaNino.stock);
@@ -115,7 +123,7 @@ function menu(opcion){
     }
 }
 /*Funcion para Registro de Compras diarias con Arrays*/
-function registraCompras(valorTotal,indicador,contador){
+/*function registraCompras(valorTotal,indicador,contador){
     if(indicador=='AD' && valorTotal>0){
         arrayComprasA.push(valorTotal);
         alert('Se registra en ArrayCompras Adultos\n Compra por: $ '+arrayComprasA[contador-1]);
@@ -127,7 +135,7 @@ function registraCompras(valorTotal,indicador,contador){
     }
 }
 /*Funcion para ver Registro de Compras diarias con Arrays*/
-function verRegistroCompras(indicador){
+/*function verRegistroCompras(indicador){
     if(indicador=='AD'){
         if (arrayComprasA.length==0){
             alert('No se han registrado compras para Adultos ');
